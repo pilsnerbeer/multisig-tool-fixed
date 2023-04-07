@@ -5,9 +5,9 @@ This is an updated coinbase/multisig-tool project that fixes some of the broken 
 The usage is 1:1 same as with the old tool. For complete instructions, visit https://github.com/coinbase/multisig-tool/blob/master/README.md
 
 In short:
-- downlaod & run the project with `make run`
+- download & run the project with `npm install` and `make run` (also you will need python to be able to run local server)
 - input your xpubs in step 1, then (optionally) go offline and input the rest for step 2
-- raw transaction will be generated. You can use https://coinb.in/ to verify that it's looking good 
+- raw transaction will be generated. You can use https://coinb.in/ to verify that it's looking good, mainly if the destination address is matching.
 - broadcast raw transaction using any bitcoin client (for example, run `broadcast("....")` in Electrum console)
 - you are done!
 
