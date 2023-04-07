@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Coinbase Multisig Vault recovery tool 2.0</title>
+    <link rel="stylesheet" href="css/multisig.css">
+  </head>
+  <body>
+    <header>
+      <h1>Coinbase Multisig Vault recovery tool 2.0 (2023 Update)</h1>
+    </header>
+    <div id="steps">
+      <div id="step_1" class="step">
+        <header>
+          <h2>Step 1</h2>
+          <p>Let's find all of your vault addresses that have some bitcoins in them.</p>
+        </header>
+        <div class="xpubkeys">
+          <p>Please enter the extended public keys (xpubkeys) for your multisig vault.</p>
+          <div class="xpubkey_container">
+            <small>Coinbase key:</small>
+            <textarea id="xpubkey1" class="xpubkey key" placeholder="xpub..."></textarea>
+          </div>
+          <div class="xpubkey_container">
+            <small>Shared key:</small>
+            <textarea id="xpubkey2" class="xpubkey key" placeholder="xpub..." ></textarea>
+          </div>
+          <div class="xpubkey_container">
+            <small>User key:</small>
+            <textarea id="xpubkey3" class="xpubkey key" placeholder="xpub..."></textarea>
+          </div>
+          <br class="clear">
+        </div>
+        <div class="max_index">
+          <p>Please enter the highest HD index to check for balance.</p>
+          <input id="max_index" type="number" placeholder="index" value="10">
+        </div>
+        <footer>
+          <button>Continue</button>
+        </footer>
+      </div>
+
+      <div id="step_2" class="step">
+        <header>
+          <h2>Step 2</h2>
+          <p>
+            Now enter the key backups that you saved when creating the vault.
+            <br>
+            <small>Protip: you can now safely go offline if you'd like.</small>
+          </p>
+        </header>
+        <div class="seed shared">
+          <label>
+            Shared encrypted seed
+            <small class="decrypt_progress">Decrypting ... <strong><span id="decrypt_percent">0</span>%</strong></small>
+          </label>
+          <textarea id="shared_seed" class="key"></textarea>
+          <input type="password" class="password" placeholder="Enter your vault password">
+        </div>
+        <div class="seed user">
+          <label>User seed</label>
+          <textarea id="user_seed" class="key"></textarea>
+        </div>
+        <div class="destination_address">
+          <label>And decide where you want the bitcoins to be sent to</label>
+          <input id="destination_address" type="text" class="key" placeholder="Enter a bitcoin address">
+        </div>
+        <div class="fees">
+          <label>What would you like the fee to be</label>
+          <input type="text" class="miner_fee" placeholder="Enter miner fees">
+        </div>
+        <footer>
+          <button>Continue</button>
+        </footer>
+      </div>
+
+      <div id="step_3" class="step">
+        <header>
+          <h2>Step 3</h2>
+          <p>Now you can copy the raw transaction and paste it into any bitcoin client to be broadcast to the network.</p>
+        </header>
+        <div class="raw">
+          <pre><code>
+            Your transaction will appear here in raw hex format ...
+          </code></pre>
+        </div>
+      </div>
+    </div>
+    <div id="transaction">
+      <table id="addresses">
+        <thead>
+          <tr>
+            <th>Node path</th>
+            <th>Address</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr class="unspent">
+            <th colspan="2">Balance</th>
+            <th><span class="balance_btc">0.00000000</span> BTC</th>
+          </tr>
+          <tr class="fees">
+            <th colspan="2">Fees</th>
+            <th><span class="fees_btc">0.00000000</span> BTC</th>
+          </tr>
+          <tr class="total">
+            <th colspan="2">Total to be sent</th>
+            <th><span class="total_btc">0.00000000</span> BTC</th>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <script type="text/javascript" src="lib/jquery-2.1.3.min.js"></script>
+
+    <!-- Our own crypto to handle multisig vault, combined with bitcoinjs-lib and all packaged together with browserify. -->
+    <script type="text/javascript" src="multisig.js"></script>
+
+    <!-- UI code that handles interactions and peruses the functions in multisig.js -->
+    <script type="text/javascript" src="lib/tool.js"></script>
+  </body>
+</html>
