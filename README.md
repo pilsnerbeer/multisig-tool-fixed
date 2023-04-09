@@ -1,6 +1,9 @@
 # Coinbase Multisig Vault recovery tool 
 This is an updated coinbase/multisig-tool project that fixes some of the broken things (mainly the API calls) so that it works in 2023.
 
+![Screenshot_2](https://user-images.githubusercontent.com/36133540/230774077-58b12d74-6ab1-4249-a159-4909e02d5972.png)
+
+
 ## Usage
 The usage is 1:1 same as with the old tool. For complete instructions, visit https://github.com/coinbase/multisig-tool/blob/master/README.md
 
