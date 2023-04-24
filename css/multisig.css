@@ -2,12 +2,15 @@ body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-#steps, #transaction {
+#steps,
+#transaction {
   width: 49%;
 }
+
 #steps {
   float: left;
 }
+
 #transaction {
   float: right;
   margin: 15px 0;
@@ -16,17 +19,25 @@ body {
 header {
   border-bottom: 2px solid #ccc;
   padding: 15px 0;
-}
-header h1 {
-  margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-textarea, input[type="text"], input[type="number"], input[type="password"] {
+header h1, .github-button {
+  display: inline-block;
+  margin: 0;
+}
+
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="password"] {
   padding: 5px;
   background: #fff;
   border: 1px solid #ccc;
 }
+
 .key {
   font-family: monospace;
 }
@@ -37,21 +48,26 @@ textarea, input[type="text"], input[type="number"], input[type="password"] {
   padding: 15px;
   margin: 15px 0;
 }
+
 .step header {
   margin-bottom: 15px;
 }
+
 .step header p {
   margin-top: 0;
 }
+
 .step h2 {
   margin-top: 0;
   margin-bottom: 5px;
 }
+
 .step footer {
   padding-top: 15px;
   height: 35px;
   clear: both;
 }
+
 .step footer button {
   background: #005ca5;
   border: 0;
@@ -67,80 +83,125 @@ textarea, input[type="text"], input[type="number"], input[type="password"] {
   border-collapse: collapse;
   width: 100%;
 }
-#transaction table th, #transaction table td {
+
+#transaction table th,
+#transaction table td {
   padding: 5px;
 }
+
 #transaction thead th {
   border-bottom: 2px solid #ccc;
 }
+
 #transaction tfoot th {
   border-top: 1px solid #ccc;
 }
+
 #transaction .unspent th {
   border-top-width: 2px;
 }
+
 #transaction tr.empty td {
   color: #ccc;
 }
+
 #transaction tr.error td {
   color: #ff0000;
 }
+
 .xpubkeys .xpubkey_container {
   width: 31%;
   float: left;
   margin-right: 2%;
 }
+
 .xpubkeys textarea {
   height: 60px;
   width: 98%;
 }
+
 .xpubkeys br.clear {
   clear: both;
 }
+
 .compressed_notice {
   font-size: 10px;
 }
+
 .max_index input {
   width: 50px;
 }
-.destination_address, .fees {
+
+.destination_address,
+.fees {
   clear: both;
   padding-top: 15px;
 }
-.destination_address input, .fees input {
+
+.destination_address input,
+.fees input {
   display: block;
   width: 300px;
   margin-top: 10px;
 }
+
 .fees input {
   width: 100px;
 }
+
 .seed {
   width: 48%;
 }
+
 .seed label {
   display: block;
   margin-bottom: 10px;
 }
-.seed textarea, .seed input {
+
+.seed textarea,
+.seed input {
   width: 97%;
 }
+
 .seed textarea {
   height: 50px;
 }
+
 .seed .decrypt_progress {
   float: right;
 }
+
 .seed.shared {
   float: left;
 }
+
 .seed.shared small {
   display: none;
 }
+
 .seed.user {
   float: right;
 }
+
 .raw code {
   word-wrap: break-word;
   font-size: 10px;
+}
+
+.github-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #4078c0;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.github-button:hover {
+  background-color: #2180b9;
+  text-decoration: none;
 }
