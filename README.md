@@ -9,7 +9,7 @@ The usage is 1:1 same as with the old tool. For complete instructions, visit htt
 
 In short:
 - download & run the project with `npm install` and `make run` (also you will need python to be able to run local server)
-- input your xpubs in step 1, then (optionally) go offline and input the rest for step 2
+- input your xpubs in step 1, then (optionally) go offline and input the rest for step 2. NOTE: For destination address, use P2SH address (starting with "3"). Native SegWit (bech32) addresses (starting with bc1) reportedly do not work.
 - raw transaction will be generated. You can use https://coinb.in/ to verify that it's looking good, mainly if the destination address is matching.
 - broadcast raw transaction using any bitcoin client (for example, run `broadcast("....")` in Electrum console)
 - you are done!
