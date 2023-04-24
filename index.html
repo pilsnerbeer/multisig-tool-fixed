@@ -7,6 +7,7 @@
   <body>
     <header>
       <h1>Coinbase Multisig Vault recovery tool 2.0 (2023 Update)</h1>
+      <a href="https://github.com/pilsnerbeer/multisig-tool-fixed" target="_blank" class="github-button">GitHub Repository</a>
     </header>
     <div id="steps">
       <div id="step_1" class="step">
@@ -61,7 +62,8 @@
           <textarea id="user_seed" class="key"></textarea>
         </div>
         <div class="destination_address">
-          <label>And decide where you want the bitcoins to be sent to</label>
+          <label>And decide where you want the bitcoins to be sent to</label><br>
+          <label>NOTE: SegWit addresses will not work (starting with "bc1")</label>
           <input id="destination_address" type="text" class="key" placeholder="Enter a bitcoin address">
         </div>
         <div class="fees">
